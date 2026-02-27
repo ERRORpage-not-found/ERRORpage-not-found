@@ -51,7 +51,7 @@
 </head>
 <body>
 
-  <h1>this page has been visited twice.</h1>
+  <h1>you...found me?</h1>
 
   <div class="post">
     <div class="date">February 26, 2026</div>
@@ -113,6 +113,21 @@
   setTimeout(function() {
     document.getElementById("whisper").style.opacity = "1";
   }, 20000); // 20 seconds
+</script>
+<script>
+  for (let i = 0; i < 15; i++) {
+    let dot = document.createElement("a");
+    dot.textContent = ".";
+    dot.href = "void.html"; // change per dot later if you want
+    dot.style.position = "fixed";
+    dot.style.top = Math.random() * 100 + "vh";
+    dot.style.left = Math.random() * 100 + "vw";
+    dot.style.fontSize = "10px";
+    dot.style.color = "#111";
+    dot.style.textDecoration = "none";
+
+    document.body.appendChild(dot);
+  }
 </script>
 </body>
 </html>
