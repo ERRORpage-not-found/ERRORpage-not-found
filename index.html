@@ -3,6 +3,23 @@
 <head>
   <title>last visitor</title>
   <style>
+    .mystery-text {
+  font-size: 18px;
+}
+
+.shift {
+  position: relative;
+  top: -5px;
+}
+
+.link-letter a {
+  color: #bfbfbf;
+  text-decoration: none;
+}
+
+.link-letter a:hover {
+  color: #fff;
+}
 .corner-link {
   position: fixed;
   bottom: 20px;
@@ -108,7 +125,11 @@
 <p id="whisper" style="opacity:0; transition: opacity 5s; margin-top:60px;">
   it can hear you..breathing
 </p>
-
+<p class="mystery-text">
+  I<span class="shift">t</span>'<span class="link-letter"><a href="void.html">s</a></span> 
+  l<span class="shift">o</span>g<span class="link-letter"><a href="hello.html">n</a></span>
+  e<span class="shift">l</span>y here
+</p>
 <script>
   setTimeout(function() {
     document.getElementById("whisper").style.opacity = "1";
