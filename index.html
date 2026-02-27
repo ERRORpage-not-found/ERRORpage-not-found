@@ -154,6 +154,22 @@
     document.body.appendChild(dot);
   }
 </script>
+<script>
+  let typed = "";
+
+  document.addEventListener("keydown", function(e) {
+    typed += e.key.toLowerCase();
+
+    // Keep only last 20 characters so it doesn't grow forever
+    if (typed.length > 20) {
+      typed = typed.slice(-20);
+    }
+
+    if (typed.includes("who is he")) {
+      window.location.href = "whoishe.html";
+    }
+  });
+</script>
 </body>
 </html>
 <p style="font-size: 1px;">
