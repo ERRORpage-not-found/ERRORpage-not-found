@@ -84,6 +84,19 @@
     }
   });
 </script>
+<script>
+  setTimeout(function() {
+    document.body.style.color = "#777";
+  }, 30000); // 30 seconds
+
+  setTimeout(function() {
+    let newText = document.createElement("p");
+    newText.textContent = "you've been here a while.";
+    newText.style.marginTop = "60px";
+    newText.style.color = "#555";
+    document.body.appendChild(newText);
+  }, 45000); // 45 seconds
+</script>
 </body>
 </html>
 <p style="font-size: 1px;">
