@@ -164,14 +164,16 @@
   let typed = "";
 
   document.addEventListener("keydown", function(e) {
-    typed += e.key.toLowerCase();
+    typed += e.key;
 
-    if (typed.length > 20) {
-      typed = typed.slice(-20);
+    typed = typed.toLowerCase().replace(/\s+/g, " ");
+
+    if (typed.length > 30) {
+      typed = typed.slice(-30);
     }
 
     if (typed.includes("who is he")) {
-      window.location.href = "whoishe?.html";
+      alert("it heard you.");
     }
   });
 </script>
