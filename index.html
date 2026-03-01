@@ -140,10 +140,22 @@
   }, 20000); // 20 seconds
 </script>
 <script>
+  let pages = [
+    "void.html",
+    "hello.html",
+    "whoishe.html",
+    "youshouldntbehere.html",
+    "heisexhausted.html"
+  ];
+
   for (let i = 0; i < 15; i++) {
     let dot = document.createElement("a");
     dot.textContent = ".";
-    dot.href = "void.html"; // change per dot later if you want
+    
+    // Pick a random page from the list
+    let randomPage = pages[Math.floor(Math.random() * pages.length)];
+    dot.href = randomPage;
+
     dot.style.position = "fixed";
     dot.style.top = Math.random() * 100 + "vh";
     dot.style.left = Math.random() * 100 + "vw";
