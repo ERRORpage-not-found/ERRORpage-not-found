@@ -94,21 +94,6 @@
   });
 </script>
 <script>
-  let typed = "";
-
-  document.addEventListener("keydown", function(e) {
-    typed += e.key.toLowerCase();
-
-    if (typed.includes("hello")) {
-      window.location.href = "hello.html";
-    }
-
-    if (typed.length > 20) {
-      typed = typed.slice(-20);
-    }
-  });
-</script>
-<script>
   setTimeout(function() {
     document.body.style.color = "#777";
   }, 30000); // 30 seconds
@@ -164,16 +149,20 @@
   let typed = "";
 
   document.addEventListener("keydown", function(e) {
-    typed += e.key;
+    typed += e.key.toLowerCase();
 
-    typed = typed.toLowerCase().replace(/\s+/g, " ");
-
+    // Keep only last 30 characters
     if (typed.length > 30) {
       typed = typed.slice(-30);
     }
 
-    if (typed.includes("who is he")) {
-      alert("it heard you.");
+    // Check longer phrase first
+    if (typed.includes("who is he?")) {
+      window.location.href = "whoishe?.html";
+    }
+
+    else if (typed.includes("hello")) {
+      window.location.href = "hello.html";
     }
   });
 </script>
