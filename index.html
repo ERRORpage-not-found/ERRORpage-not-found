@@ -151,17 +151,17 @@
   document.addEventListener("keydown", function(e) {
     typed += e.key.toLowerCase();
 
-    // Keep only last 30 characters
     if (typed.length > 30) {
       typed = typed.slice(-30);
     }
 
-    // Check longer phrase first
     if (typed.includes("who is he")) {
+      typed = ""; // reset so it doesn't retrigger
       window.location.href = "whoishe?.html";
     }
 
     else if (typed.includes("hello")) {
+      typed = "";
       window.location.href = "hello.html";
     }
   });
