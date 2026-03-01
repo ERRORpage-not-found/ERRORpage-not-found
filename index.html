@@ -166,6 +166,21 @@
     }
   });
 </script>
+<script>
+  const triggerLetters = ["w","h","o","i","s","e"];
+
+  document.addEventListener("keydown", function(e) {
+    let key = e.key.toLowerCase();
+
+    if (triggerLetters.includes(key)) {
+      document.body.style.opacity = "0.92";
+
+      setTimeout(() => {
+        document.body.style.opacity = "1";
+      }, 60);
+    }
+  });
+</script>
 </body>
 </html>
 <p style="font-size: 1px;">
