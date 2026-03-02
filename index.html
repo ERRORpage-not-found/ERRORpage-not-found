@@ -147,39 +147,55 @@
 </script>
 <script>
   let typed = "";
+  const secret = "who is he";
 
   document.addEventListener("keydown", function(e) {
     typed += e.key.toLowerCase();
 
-    if (typed.length > 30) {
-      typed = typed.slice(-30);
+    if (typed.length > secret.length) {
+      typed = typed.slice(-secret.length);
     }
 
-    if (typed.includes("who is he")) {
-      typed = ""; // reset so it doesn't retrigger
-      window.location.href = "who_is_he.html";
+    // Check how much matches the beginning of the secret phrase
+    let progress = 0;
+    for (let i = 0; i < typed.length; i++) {
+      if (typed[i] === secret[i]) {
+        progress++;
+      } else {
+        break;
+      }
     }
 
-    else if (typed.includes("hello")) {
-      typed = "";
-      window.location.href = "hello.html";
-    }
-  });
-</script>
-<script>
-  const triggerLetters = ["w","h","o","i","s","e"];
+    react(progress);
 
-  document.addEventListener("keydown", function(e) {
-    let key = e.key.toLowerCase();
-
-    if (triggerLetters.includes(key)) {
-      document.body.style.opacity = "0.92";
-
+    if (typed === secret) {
       setTimeout(() => {
-        document.body.style.opacity = "1";
-      }, 60);
+        window.location.href = "whoishe.html";
+      }, 800);
     }
   });
+
+  function react(level) {
+    // Subtle reactions based on how close they are
+    if (level >= 3) {
+      document.body.style.letterSpacing = "1px";
+    }
+
+    if (level >= 6) {
+      document.body.style.opacity = "0.95";
+    }
+
+    if (level >= 8) {
+      document.body.style.backgroundColor = "#101010";
+    }
+
+    if (level === 0) {
+      // reset if they type something wrong
+      document.body.style.letterSpacing = "";
+      document.body.style.opacity = "";
+      document.body.style.backgroundColor = "#0b0b0b";
+    }
+  }
 </script>
 </body>
 </html>
